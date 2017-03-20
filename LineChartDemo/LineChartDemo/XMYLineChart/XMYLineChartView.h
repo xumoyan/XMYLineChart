@@ -238,7 +238,10 @@ IB_DESIGNABLE @interface XMYLineChartView : UIView<UIGestureRecognizerDelegate>
 @property (nonatomic, strong) IBInspectable UIColor *colorYLabel;
 
 ///弹出信息框的背景颜色
-@property (nonatomic, strong) UIColor *colorBackgroundPopUplabel;
+@property (nonatomic, strong) UIColor *colorBackgroundPopUpLabel;
+
+///弹出label文字颜色
+@property (nonatomic, strong) UIColor *colorTextPopUpLabel;
 
 ///Y轴是否放在是右侧
 @property (nonatomic, assign) BOOL positionYRight;

@@ -145,7 +145,7 @@ typedef NS_ENUM(NSInteger, XMYInternalTags)
     _colorBottom = [UIColor colorWithRed:0 green:122.0/255.0 blue:255/255 alpha:1];
     _colorLinkGraph = [UIColor colorWithWhite:1.0 alpha:0.7];
     _colorTouchInputLine = [UIColor grayColor];
-    _colorBackgroundPopUplabel = [UIColor whiteColor];
+    _colorBackgroundPopUpLabel = [UIColor whiteColor];
     _alphaTouchInputLine = 0.2;
     _widthTouchInputLine = 1.0;
     _colorBackgroundX = nil;
@@ -251,7 +251,7 @@ typedef NS_ENUM(NSInteger, XMYInternalTags)
                     numberOfPoints = pointsArray.count;
                     [dataPoints addObject:pointsArray];
                     for (NSString *points in pointsArray) {
-                        CGFloat point = [points integerValue];
+                        CGFloat point = [points doubleValue];
                         [sumPointData addObject:@(point)];
                     }
                 }
@@ -395,9 +395,10 @@ typedef NS_ENUM(NSInteger, XMYInternalTags)
                 self.popUpLabel.backgroundColor = [UIColor clearColor];
                 [self.popUpLabel sizeToFit];
                 self.popUpLabel.alpha = 0;
+                self.popUpLabel.textColor = self.colorTextPopUpLabel;
                 
                 self.popUpView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.popUpLabel.frame.size.width + 10, self.popUpLabel.frame.size.height + 2)];
-                self.popUpView.backgroundColor = self.colorBackgroundPopUplabel;
+                self.popUpView.backgroundColor = self.colorBackgroundPopUpLabel;
                 self.popUpView.alpha = 0;
                 self.popUpView.layer.cornerRadius = 3;
                 [self addSubview:self.popUpView];
@@ -1075,7 +1076,7 @@ typedef NS_ENUM(NSInteger, XMYInternalTags)
     permanentPopUpLabel.alpha = 0;
     
     XMYPopUpView *permanentPopUpView = [[XMYPopUpView alloc] initWithFrame:CGRectMake(0, 0, permanentPopUpLabel.frame.size.width + 7, permanentPopUpLabel.frame.size.height + 2)];
-    permanentPopUpView.backgroundColor = self.colorBackgroundPopUplabel;
+    permanentPopUpView.backgroundColor = self.colorBackgroundPopUpLabel;
     permanentPopUpView.alpha = 0;
     permanentPopUpView.layer.cornerRadius = 3;
     permanentPopUpView.tag = PermanentPopUpViewTag3100;
