@@ -8,7 +8,7 @@
 
 ###CocoaPods
 推荐使用pod方式将XMYLineChart添加到你的项目中。<br>
-1. 将XMYLineChart添加到你的Podfile文件 `pod 'XMYLineChart', '~> 0.0.1'`<br>
+1. 将XMYLineChart添加到你的Podfile文件 `pod 'XMYLineChart', '~> 0.0.2'`<br>
 2. 安装pod运行`pod install`<br>
 3. pod下来以后通过引入`#import "XMYLineChart.h"` 使用
 ###部分功能列表
