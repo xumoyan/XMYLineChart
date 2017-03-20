@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "XMYLineChart"
-  s.version      = "0.0.2"
+  s.version      = "1.0.0"
   s.summary      = "Can be customized line chart"
   s.homepage     = "https://github.com/xumoyan/XMYLineChart"
   s.license      = "MIT"
