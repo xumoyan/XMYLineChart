@@ -1434,7 +1434,9 @@ typedef NS_ENUM(NSInteger, XMYInternalTags)
             }
             if (pow(((point.center.x) - touchLine.center.x), 2) <= currentlyCloser) {
                 currentlyCloser = pow(((point.center.x) - touchLine.center.x), 2);
-                [XMYLinkArray addObject:point];
+                for (int i = 0; i < numberOfLines; i ++) {
+                    [XMYLinkArray addObject:point];
+                }
             }
         }
     }

@@ -383,9 +383,9 @@ typedef NS_ENUM(NSInteger, XMYInternalTags)
                 NSDictionary *attributes = @{NSFontAttributeName: self.labelFont};;
                 
                 CGSize popLableSize = [mString boundingRectWithSize:CGSizeMake(200, MAXFLOAT)
-                                     options:NSStringDrawingUsesLineFragmentOrigin
-                                  attributes:attributes
-                                      context:nil].size;
+                                                            options:NSStringDrawingUsesLineFragmentOrigin
+                                                         attributes:attributes
+                                                            context:nil].size;
                 
                 self.popUpLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 200, popLableSize.height)];
                 self.popUpLabel.text = mString;
@@ -430,7 +430,7 @@ typedef NS_ENUM(NSInteger, XMYInternalTags)
 - (void)drawEntireGraph {
     self.maxValue = [self getMaximumValue];
     self.minValue = [self getMinimumValue];
-
+    
     //如果显示Y轴标签，需要对折线图进行偏移，偏移量等于标签中宽度最大值
     if (self.displayYLabel) {
         NSDictionary *attributes = @{NSFontAttributeName: self.labelFont};
@@ -467,7 +467,7 @@ typedef NS_ENUM(NSInteger, XMYInternalTags)
     
     //画图形界面
     [self drawDots];
-
+    
     //画Y轴
     if (self.displayYLabel) [self drawYAxis];
 }
@@ -1434,7 +1434,9 @@ typedef NS_ENUM(NSInteger, XMYInternalTags)
             }
             if (pow(((point.center.x) - touchLine.center.x), 2) <= currentlyCloser) {
                 currentlyCloser = pow(((point.center.x) - touchLine.center.x), 2);
-                [XMYLinkArray addObject:point];
+                for (int i = 0; i < numberOfLines; i ++) {
+                    [XMYLinkArray addObject:point];
+                }
             }
         }
     }
